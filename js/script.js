@@ -1,14 +1,14 @@
 //prendo il bottone
 const button = document.getElementById("submit");
 button.addEventListener("click", function() {
-    const submit = document.getElementById("submit");
-    
+    const submit = document.getElementById("TicketAmount");
+    ticketAmount.className = "";
 
     //prendo gli input dall'utente
     //km
     const userKmInput = document.getElementById("km-number");
     const userKm = userKmInput.value; 
-
+    
     //anni
     const userAgeInput = document.getElementById("user-age");
     const userAge = userAgeInput.value; 
@@ -31,5 +31,12 @@ button.addEventListener("click", function() {
     }
     console.log(finalPrice);
 
+    // pulizia input
+    userKmInput.value = "";
+    userAgeInput.value = "";
+
+    //output
+    document.getElementById("ticketAmount").innerHTML = `Il prezzo del tuo biglietto e' ${finalPrice}`
+     
 
 })
